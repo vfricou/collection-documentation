@@ -4,6 +4,7 @@ on:
   push:
     branches:
       - master
+  workflow_dispatch:
 
 env:
   ANSIBLE_COLLECTIONS_PATH: 'collections'

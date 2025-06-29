@@ -37,6 +37,13 @@ jobs:
           ref: master
           path: ${{ env.ANSIBLE_COLLECTIONS_PATH }}/ansible_collections/vfricou/apps
 
+      - name: Checkout collection vfricou.apps
+        uses: actions/checkout@v4
+        with:
+          repository: 'vfricou/vfricou.system'
+          ref: master
+          path: ${{ env.ANSIBLE_COLLECTIONS_PATH }}/ansible_collections/vfricou/system
+
       - name: Cache collections
         uses: actions/cache@v3
         with:

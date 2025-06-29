@@ -19,7 +19,8 @@ antsibull-docs \
     --cleanup everything \
     --use-current \
     --dest-dir rst \
-    vfricou.apps
+    vfricou.apps \
+    vfricou.system
 
 # Build Sphinx site
 sphinx-build -M html rst build -c . -W --keep-going

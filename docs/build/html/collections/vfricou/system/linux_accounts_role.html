@@ -1,0 +1,435 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" data-content_root="../../../">
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+<meta content="2.16.3" name="antsibull-docs" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>vfricou.system.linux_accounts role – Manage accounts on GNU/Linux systems &mdash; vfricou Ansible collections  documentation</title>
+      <link rel="stylesheet" type="text/css" href="../../../_static/pygments.css?v=41de9001" />
+      <link rel="stylesheet" type="text/css" href="../../../_static/css/ansible.css?v=c5b67dd2" />
+      <link rel="stylesheet" type="text/css" href="../../../_static/antsibull-minimal.css" />
+      <link rel="stylesheet" type="text/css" href="../../../_static/css/rtd-ethical-ads.css?v=289b023e" />
+
+  
+    <link rel="shortcut icon" href="../../../_static/images/Ansible-Mark-RGB_Black.png"/>
+      <script src="../../../_static/jquery.js?v=5d32c60e"></script>
+      <script src="../../../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+      <script src="../../../_static/documentation_options.js?v=7f41d439"></script>
+      <script src="../../../_static/doctools.js?v=9bcbadda"></script>
+      <script src="../../../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../../../_static/js/theme.js"></script>
+    <link rel="search" title="Search" href="../../../search.html" />
+    <link rel="next" title="vfricou.system.shell role – Shell configuration" href="shell_role.html" />
+    <link rel="prev" title="vfricou.system.firewalld role – Install and manage firewalld" href="firewalld_role.html" /><!-- extra head elements for Ansible beyond RTD Sphinx Theme -->
+
+
+
+
+</head>
+
+<body class="wy-body-for-nav"><!-- extra body elements for Ansible beyond RTD Sphinx Theme -->
+
+<div class="DocSite-globalNav ansibleNav">
+  <ul>
+    <li><a href="https://www.ansible.com/blog" target="_blank">Blog</a></li>
+    <li><a href="https://forum.ansible.com/" target="_blank">Ansible community forum</a></li>
+    <li><a href="https://docs.ansible.com/" target="_blank">Documentation</a></li>
+  </ul>
+</div>
+
+<a class="DocSite-nav" href="/" style="padding-bottom: 30px;">
+
+  <img class="DocSiteNav-logo"
+    src="../../../_static/images/Ansible-Mark-RGB_White.png"
+    alt="Ansible Logo">
+  <div class="DocSiteNav-title">vfricou Ansible Collections Documentation</div>
+</a>
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="../../../index.html" class="icon icon-home">
+            vfricou Ansible collections
+          </a><!--- Based on https://github.com/rtfd/sphinx_rtd_theme/pull/438/files -->
+
+<div class="version">
+  
+    
+  
+</div>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../../search.html" method="get">
+    <label class="sr-only" for="q">Search docs:</label>
+    <input type="text" class="st-default-search-input" id="q" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+  
+              <p class="caption" role="heading"><span class="caption-text">Collections:</span></p>
+<ul class="current">
+<li class="toctree-l1 current"><a class="reference internal" href="../../index.html">Collection Index</a><ul class="current">
+<li class="toctree-l2 current"><a class="reference internal" href="../index.html">Collections in the Vfricou Namespace</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="../apps/index.html">Vfricou.Apps</a></li>
+<li class="toctree-l3 current"><a class="reference internal" href="index.html">Vfricou.System</a><ul class="current">
+<li class="toctree-l4"><a class="reference internal" href="index.html#description">Description</a></li>
+<li class="toctree-l4"><a class="reference internal" href="index.html#plugin-index">Plugin Index</a></li>
+<li class="toctree-l4 current"><a class="reference internal" href="index.html#role-index">Role Index</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Plugin indexes:</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../index_role.html">Index of all Roles</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Reference indexes:</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../environment_variables.html">Index of all Collection Environment Variables</a></li>
+</ul>
+<!-- extra nav elements for Ansible beyond RTD Sphinx Theme -->
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../../index.html">vfricou Ansible collections</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../../../index.html" class="icon icon-home" aria-label="Home"></a></li>
+          <li class="breadcrumb-item"><a href="../../index.html">Collection Index</a></li>
+          <li class="breadcrumb-item"><a href="../index.html">Collections in the Vfricou Namespace</a></li>
+          <li class="breadcrumb-item"><a href="index.html">Vfricou.System</a></li>
+      <li class="breadcrumb-item active">vfricou.system.linux_accounts role – Manage accounts on GNU/Linux systems</li>
+      <li class="wy-breadcrumbs-aside">
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+
+  
+           <div itemprop="articleBody">
+             
+  <span class="target" id="ansible-collections-vfricou-system-linux-accounts-role"></span><section id="vfricou-system-linux-accounts-role-manage-accounts-on-gnu-linux-systems">
+<h1>vfricou.system.linux_accounts role – Manage accounts on GNU/Linux systems<a class="headerlink" href="#vfricou-system-linux-accounts-role-manage-accounts-on-gnu-linux-systems" title="Link to this heading"></a></h1>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>This role is part of the <a class="reference external" href="https://galaxy.ansible.com/ui/repo/published/vfricou/system/">vfricou.system collection</a> (version 1.0.0).</p>
+<p>It is not included in <code class="docutils literal notranslate"><span class="pre">ansible-core</span></code>.
+To check whether it is installed, run <code class="code docutils literal notranslate"><span class="pre">ansible-galaxy</span> <span class="pre">collection</span> <span class="pre">list</span></code>.</p>
+<p>To install it use: <code class="code docutils literal notranslate"><span class="pre">ansible-galaxy</span> <span class="pre">collection</span> <span class="pre">install</span> <span class="pre">vfricou.system</span></code>.</p>
+<p>To use it in a playbook, specify: <code class="code docutils literal notranslate"><span class="pre">vfricou.system.linux_accounts</span></code>.</p>
+</div>
+<nav class="contents local" id="contents">
+<ul class="simple">
+<li><p><a class="reference internal" href="#entry-point-main-manage-accounts-on-gnu-linux-systems" id="id1">Entry point <code class="docutils literal notranslate"><span class="pre">main</span></code> – Manage accounts on GNU/Linux systems</a></p>
+<ul>
+<li><p><a class="reference internal" href="#synopsis" id="id2">Synopsis</a></p></li>
+<li><p><a class="reference internal" href="#parameters" id="id3">Parameters</a></p></li>
+<li><p><a class="reference internal" href="#examples" id="id4">Examples</a></p></li>
+<li><p><a class="reference internal" href="#authors" id="id5">Authors</a></p></li>
+</ul>
+</li>
+</ul>
+</nav>
+<section id="entry-point-main-manage-accounts-on-gnu-linux-systems">
+<h2><a class="toc-backref" href="#id1" role="doc-backlink">Entry point <code class="docutils literal notranslate"><span class="pre">main</span></code> – Manage accounts on GNU/Linux systems</a><a class="headerlink" href="#entry-point-main-manage-accounts-on-gnu-linux-systems" title="Link to this heading"></a></h2>
+<section id="synopsis">
+<h3><a class="toc-backref" href="#id2" role="doc-backlink">Synopsis</a><a class="headerlink" href="#synopsis" title="Link to this heading"></a></h3>
+<ul class="simple">
+<li><p>Manage Linux accounts</p></li>
+<li><p>Autogenerate password if not provided</p></li>
+<li><p>Deploy SSH public keys to users</p></li>
+</ul>
+</section>
+<section id="parameters">
+<h3><a class="toc-backref" href="#id3" role="doc-backlink">Parameters</a><a class="headerlink" href="#parameters" title="Link to this heading"></a></h3>
+<table class="longtable ansible-option-table docutils align-default" style="width: 100%">
+<thead>
+<tr class="row-odd"><th class="head"><p>Parameter</p></th>
+<th class="head"><p>Comments</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><div class="ansible-option-cell">
+<div class="ansibleOptionAnchor" id="parameter-main--linux_accounts_list"></div><p class="ansible-option-title" id="ansible-collections-vfricou-system-linux-accounts-role-parameter-main-linux-accounts-list"><strong>linux_accounts_list</strong></p>
+<a class="ansibleOptionLink" href="#parameter-main--linux_accounts_list" title="Permalink to this option"></a><p class="ansible-option-type-line"><span class="ansible-option-type">list</span> / <span class="ansible-option-elements">elements=dictionary</span> / <span class="ansible-option-required">required</span></p>
+</div></td>
+<td><div class="ansible-option-cell"><p>Users specifications list</p>
+</div></td>
+</tr>
+<tr class="row-odd"><td><div class="ansible-option-indent"></div><div class="ansible-option-cell">
+<div class="ansibleOptionAnchor" id="parameter-main--linux_accounts_list/comment"></div><p class="ansible-option-title" id="ansible-collections-vfricou-system-linux-accounts-role-parameter-main-linux-accounts-list-comment"><strong>comment</strong></p>
+<a class="ansibleOptionLink" href="#parameter-main--linux_accounts_list/comment" title="Permalink to this option"></a><p class="ansible-option-type-line"><span class="ansible-option-type">string</span></p>
+</div></td>
+<td><div class="ansible-option-indent-desc"></div><div class="ansible-option-cell"><p>User description (GECOS)</p>
+</div></td>
+</tr>
+<tr class="row-even"><td><div class="ansible-option-indent"></div><div class="ansible-option-cell">
+<div class="ansibleOptionAnchor" id="parameter-main--linux_accounts_list/force_passwd_change"></div><p class="ansible-option-title" id="ansible-collections-vfricou-system-linux-accounts-role-parameter-main-linux-accounts-list-force-passwd-change"><strong>force_passwd_change</strong></p>
+<a class="ansibleOptionLink" href="#parameter-main--linux_accounts_list/force_passwd_change" title="Permalink to this option"></a><p class="ansible-option-type-line"><span class="ansible-option-type">boolean</span></p>
+</div></td>
+<td><div class="ansible-option-indent-desc"></div><div class="ansible-option-cell"><p>Force user password update</p>
+<p class="ansible-option-line"><strong class="ansible-option-choices">Choices:</strong></p>
+<ul class="simple">
+<li><p><code class="ansible-option-choices-entry docutils literal notranslate"><span class="pre">false</span></code></p></li>
+<li><p><code class="ansible-option-choices-entry docutils literal notranslate"><span class="pre">true</span></code></p></li>
+</ul>
+</div></td>
+</tr>
+<tr class="row-odd"><td><div class="ansible-option-indent"></div><div class="ansible-option-cell">
+<div class="ansibleOptionAnchor" id="parameter-main--linux_accounts_list/groups"></div><p class="ansible-option-title" id="ansible-collections-vfricou-system-linux-accounts-role-parameter-main-linux-accounts-list-groups"><strong>groups</strong></p>
+<a class="ansibleOptionLink" href="#parameter-main--linux_accounts_list/groups" title="Permalink to this option"></a><p class="ansible-option-type-line"><span class="ansible-option-type">list</span> / <span class="ansible-option-elements">elements=string</span></p>
+</div></td>
+<td><div class="ansible-option-indent-desc"></div><div class="ansible-option-cell"><p>Additionnal user groups</p>
+</div></td>
+</tr>
+<tr class="row-even"><td><div class="ansible-option-indent"></div><div class="ansible-option-cell">
+<div class="ansibleOptionAnchor" id="parameter-main--linux_accounts_list/home"></div><p class="ansible-option-title" id="ansible-collections-vfricou-system-linux-accounts-role-parameter-main-linux-accounts-list-home"><strong>home</strong></p>
+<a class="ansibleOptionLink" href="#parameter-main--linux_accounts_list/home" title="Permalink to this option"></a><p class="ansible-option-type-line"><span class="ansible-option-type">string</span></p>
+</div></td>
+<td><div class="ansible-option-indent-desc"></div><div class="ansible-option-cell"><p>User home path</p>
+<p class="ansible-option-line"><strong class="ansible-option-default-bold">Default:</strong> <code class="ansible-option-default docutils literal notranslate"><span class="pre">&quot;/home/&lt;name&gt;&quot;</span></code></p>
+</div></td>
+</tr>
+<tr class="row-odd"><td><div class="ansible-option-indent"></div><div class="ansible-option-cell">
+<div class="ansibleOptionAnchor" id="parameter-main--linux_accounts_list/name"></div><p class="ansible-option-title" id="ansible-collections-vfricou-system-linux-accounts-role-parameter-main-linux-accounts-list-name"><strong>name</strong></p>
+<a class="ansibleOptionLink" href="#parameter-main--linux_accounts_list/name" title="Permalink to this option"></a><p class="ansible-option-type-line"><span class="ansible-option-type">string</span> / <span class="ansible-option-required">required</span></p>
+</div></td>
+<td><div class="ansible-option-indent-desc"></div><div class="ansible-option-cell"><p>User name</p>
+</div></td>
+</tr>
+<tr class="row-even"><td><div class="ansible-option-indent"></div><div class="ansible-option-cell">
+<div class="ansibleOptionAnchor" id="parameter-main--linux_accounts_list/pass"></div><p class="ansible-option-title" id="ansible-collections-vfricou-system-linux-accounts-role-parameter-main-linux-accounts-list-pass"><strong>pass</strong></p>
+<a class="ansibleOptionLink" href="#parameter-main--linux_accounts_list/pass" title="Permalink to this option"></a><p class="ansible-option-type-line"><span class="ansible-option-type">string</span></p>
+</div></td>
+<td><div class="ansible-option-indent-desc"></div><div class="ansible-option-cell"><p>User password</p>
+<p><strong>Must</strong> defined for types <code class="docutils literal notranslate"><span class="pre">plain</span></code> and <code class="docutils literal notranslate"><span class="pre">encrypted</span></code></p>
+</div></td>
+</tr>
+<tr class="row-odd"><td><div class="ansible-option-indent"></div><div class="ansible-option-cell">
+<div class="ansibleOptionAnchor" id="parameter-main--linux_accounts_list/pass_type"></div><p class="ansible-option-title" id="ansible-collections-vfricou-system-linux-accounts-role-parameter-main-linux-accounts-list-pass-type"><strong>pass_type</strong></p>
+<a class="ansibleOptionLink" href="#parameter-main--linux_accounts_list/pass_type" title="Permalink to this option"></a><p class="ansible-option-type-line"><span class="ansible-option-type">string</span></p>
+</div></td>
+<td><div class="ansible-option-indent-desc"></div><div class="ansible-option-cell"><p>User password type</p>
+<p class="ansible-option-line"><strong class="ansible-option-choices">Choices:</strong></p>
+<ul class="simple">
+<li><p><code class="ansible-option-choices-entry docutils literal notranslate"><span class="pre">&quot;plain&quot;</span></code></p></li>
+<li><p><code class="ansible-option-choices-entry docutils literal notranslate"><span class="pre">&quot;encrypted&quot;</span></code></p></li>
+<li><p><code class="ansible-option-choices-entry docutils literal notranslate"><span class="pre">&quot;autogen&quot;</span></code></p></li>
+<li><p><code class="ansible-option-choices-entry docutils literal notranslate"><span class="pre">&quot;passphrase&quot;</span></code></p></li>
+<li><p><code class="ansible-option-choices-entry docutils literal notranslate"><span class="pre">&quot;locked&quot;</span></code></p></li>
+</ul>
+</div></td>
+</tr>
+<tr class="row-even"><td><div class="ansible-option-indent"></div><div class="ansible-option-cell">
+<div class="ansibleOptionAnchor" id="parameter-main--linux_accounts_list/passphrase_params"></div><p class="ansible-option-title" id="ansible-collections-vfricou-system-linux-accounts-role-parameter-main-linux-accounts-list-passphrase-params"><strong>passphrase_params</strong></p>
+<a class="ansibleOptionLink" href="#parameter-main--linux_accounts_list/passphrase_params" title="Permalink to this option"></a><p class="ansible-option-type-line"><span class="ansible-option-type">list</span> / <span class="ansible-option-elements">elements=string</span></p>
+</div></td>
+<td><div class="ansible-option-indent-desc"></div><div class="ansible-option-cell"><p>Passphrase format settings</p>
+<p><strong>Order is mandatory</strong></p>
+<p><strong>Order</strong></p>
+<p><code class="docutils literal notranslate"><span class="pre">min_length</span></code>: Minimum word length</p>
+<p><code class="docutils literal notranslate"><span class="pre">max_length</span></code>: Maximum word length</p>
+<p><code class="docutils literal notranslate"><span class="pre">numwords</span></code>: Word count for passphrase</p>
+<p><code class="docutils literal notranslate"><span class="pre">delimiter</span></code>: Delimiters</p>
+<p><code class="docutils literal notranslate"><span class="pre">case</span></code>: Case format</p>
+<p>Refer to <a class="reference external" href="https://docs.ansible.com/ansible/latest/collections/community/general/random_words_lookup.html#ansible-collections-community-general-random-words-lookup">community.general.random_string</a></p>
+<p class="ansible-option-line"><strong class="ansible-option-default-bold">Default:</strong> <code class="ansible-option-default docutils literal notranslate"><span class="pre">[5,</span> <span class="pre">8,</span> <span class="pre">6,</span> <span class="pre">&quot;-&quot;,</span> <span class="pre">&quot;capitalize&quot;]</span></code></p>
+</div></td>
+</tr>
+<tr class="row-odd"><td><div class="ansible-option-indent"></div><div class="ansible-option-cell">
+<div class="ansibleOptionAnchor" id="parameter-main--linux_accounts_list/shell"></div><p class="ansible-option-title" id="ansible-collections-vfricou-system-linux-accounts-role-parameter-main-linux-accounts-list-shell"><strong>shell</strong></p>
+<a class="ansibleOptionLink" href="#parameter-main--linux_accounts_list/shell" title="Permalink to this option"></a><p class="ansible-option-type-line"><span class="ansible-option-type">string</span></p>
+</div></td>
+<td><div class="ansible-option-indent-desc"></div><div class="ansible-option-cell"><p>User login shell</p>
+<p class="ansible-option-line"><strong class="ansible-option-choices">Choices:</strong></p>
+<ul class="simple">
+<li><p><code class="ansible-option-default-bold docutils literal notranslate"><strong><span class="pre">&quot;/usr/bin/bash&quot;</span></strong></code> <span class="ansible-option-choices-default-mark">← (default)</span></p></li>
+<li><p><code class="ansible-option-choices-entry docutils literal notranslate"><span class="pre">&quot;/bin/bash&quot;</span></code></p></li>
+<li><p><code class="ansible-option-choices-entry docutils literal notranslate"><span class="pre">&quot;/usr/bin/zsh&quot;</span></code></p></li>
+<li><p><code class="ansible-option-choices-entry docutils literal notranslate"><span class="pre">&quot;/bin/zsh&quot;</span></code></p></li>
+<li><p><code class="ansible-option-choices-entry docutils literal notranslate"><span class="pre">&quot;/usr/bin/false&quot;</span></code></p></li>
+<li><p><code class="ansible-option-choices-entry docutils literal notranslate"><span class="pre">&quot;/bin/false&quot;</span></code></p></li>
+<li><p><code class="ansible-option-choices-entry docutils literal notranslate"><span class="pre">&quot;/usr/sbin/nologin&quot;</span></code></p></li>
+<li><p><code class="ansible-option-choices-entry docutils literal notranslate"><span class="pre">&quot;/sbin/nologin&quot;</span></code></p></li>
+</ul>
+</div></td>
+</tr>
+<tr class="row-even"><td><div class="ansible-option-indent"></div><div class="ansible-option-cell">
+<div class="ansibleOptionAnchor" id="parameter-main--linux_accounts_list/ssh_keys"></div><p class="ansible-option-title" id="ansible-collections-vfricou-system-linux-accounts-role-parameter-main-linux-accounts-list-ssh-keys"><strong>ssh_keys</strong></p>
+<a class="ansibleOptionLink" href="#parameter-main--linux_accounts_list/ssh_keys" title="Permalink to this option"></a><p class="ansible-option-type-line"><span class="ansible-option-type">list</span> / <span class="ansible-option-elements">elements=dictionary</span></p>
+</div></td>
+<td><div class="ansible-option-indent-desc"></div><div class="ansible-option-cell"><p>User SSH public keys to deploy</p>
+</div></td>
+</tr>
+<tr class="row-odd"><td><div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-cell">
+<div class="ansibleOptionAnchor" id="parameter-main--linux_accounts_list/ssh_keys/content"></div><p class="ansible-option-title" id="ansible-collections-vfricou-system-linux-accounts-role-parameter-main-linux-accounts-list-ssh-keys-content"><strong>content</strong></p>
+<a class="ansibleOptionLink" href="#parameter-main--linux_accounts_list/ssh_keys/content" title="Permalink to this option"></a><p class="ansible-option-type-line"><span class="ansible-option-type">string</span> / <span class="ansible-option-required">required</span></p>
+</div></td>
+<td><div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-cell"><p>SSH public key</p>
+</div></td>
+</tr>
+<tr class="row-even"><td><div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-cell">
+<div class="ansibleOptionAnchor" id="parameter-main--linux_accounts_list/ssh_keys/opts"></div><p class="ansible-option-title" id="ansible-collections-vfricou-system-linux-accounts-role-parameter-main-linux-accounts-list-ssh-keys-opts"><strong>opts</strong></p>
+<a class="ansibleOptionLink" href="#parameter-main--linux_accounts_list/ssh_keys/opts" title="Permalink to this option"></a><p class="ansible-option-type-line"><span class="ansible-option-type">string</span></p>
+</div></td>
+<td><div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-cell"><p>SSH public key options</p>
+</div></td>
+</tr>
+<tr class="row-odd"><td><div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-cell">
+<div class="ansibleOptionAnchor" id="parameter-main--linux_accounts_list/ssh_keys/state"></div><p class="ansible-option-title" id="ansible-collections-vfricou-system-linux-accounts-role-parameter-main-linux-accounts-list-ssh-keys-state"><strong>state</strong></p>
+<a class="ansibleOptionLink" href="#parameter-main--linux_accounts_list/ssh_keys/state" title="Permalink to this option"></a><p class="ansible-option-type-line"><span class="ansible-option-type">string</span> / <span class="ansible-option-required">required</span></p>
+</div></td>
+<td><div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-cell"><p>SSH public key status</p>
+<p class="ansible-option-line"><strong class="ansible-option-choices">Choices:</strong></p>
+<ul class="simple">
+<li><p><code class="ansible-option-choices-entry docutils literal notranslate"><span class="pre">&quot;present&quot;</span></code></p></li>
+<li><p><code class="ansible-option-choices-entry docutils literal notranslate"><span class="pre">&quot;absent&quot;</span></code></p></li>
+</ul>
+</div></td>
+</tr>
+<tr class="row-even"><td><div class="ansible-option-indent"></div><div class="ansible-option-cell">
+<div class="ansibleOptionAnchor" id="parameter-main--linux_accounts_list/state"></div><p class="ansible-option-title" id="ansible-collections-vfricou-system-linux-accounts-role-parameter-main-linux-accounts-list-state"><strong>state</strong></p>
+<a class="ansibleOptionLink" href="#parameter-main--linux_accounts_list/state" title="Permalink to this option"></a><p class="ansible-option-type-line"><span class="ansible-option-type">string</span></p>
+</div></td>
+<td><div class="ansible-option-indent-desc"></div><div class="ansible-option-cell"><p>User state</p>
+<p class="ansible-option-line"><strong class="ansible-option-choices">Choices:</strong></p>
+<ul class="simple">
+<li><p><code class="ansible-option-default-bold docutils literal notranslate"><strong><span class="pre">&quot;present&quot;</span></strong></code> <span class="ansible-option-choices-default-mark">← (default)</span></p></li>
+<li><p><code class="ansible-option-choices-entry docutils literal notranslate"><span class="pre">&quot;absent&quot;</span></code></p></li>
+</ul>
+</div></td>
+</tr>
+<tr class="row-odd"><td><div class="ansible-option-indent"></div><div class="ansible-option-cell">
+<div class="ansibleOptionAnchor" id="parameter-main--linux_accounts_list/system"></div><p class="ansible-option-title" id="ansible-collections-vfricou-system-linux-accounts-role-parameter-main-linux-accounts-list-system"><strong>system</strong></p>
+<a class="ansibleOptionLink" href="#parameter-main--linux_accounts_list/system" title="Permalink to this option"></a><p class="ansible-option-type-line"><span class="ansible-option-type">boolean</span></p>
+</div></td>
+<td><div class="ansible-option-indent-desc"></div><div class="ansible-option-cell"><p>Define system account</p>
+<p class="ansible-option-line"><strong class="ansible-option-choices">Choices:</strong></p>
+<ul class="simple">
+<li><p><code class="ansible-option-default-bold docutils literal notranslate"><strong><span class="pre">false</span></strong></code> <span class="ansible-option-choices-default-mark">← (default)</span></p></li>
+<li><p><code class="ansible-option-choices-entry docutils literal notranslate"><span class="pre">true</span></code></p></li>
+</ul>
+</div></td>
+</tr>
+<tr class="row-even"><td><div class="ansible-option-cell">
+<div class="ansibleOptionAnchor" id="parameter-main--linux_accounts_no_log"></div><p class="ansible-option-title" id="ansible-collections-vfricou-system-linux-accounts-role-parameter-main-linux-accounts-no-log"><strong>linux_accounts_no_log</strong></p>
+<a class="ansibleOptionLink" href="#parameter-main--linux_accounts_no_log" title="Permalink to this option"></a><p class="ansible-option-type-line"><span class="ansible-option-type">boolean</span></p>
+</div></td>
+<td><div class="ansible-option-cell"><p>No log directive</p>
+<p class="ansible-option-line"><strong class="ansible-option-choices">Choices:</strong></p>
+<ul class="simple">
+<li><p><code class="ansible-option-choices-entry docutils literal notranslate"><span class="pre">false</span></code></p></li>
+<li><p><code class="ansible-option-default-bold docutils literal notranslate"><strong><span class="pre">true</span></strong></code> <span class="ansible-option-choices-default-mark">← (default)</span></p></li>
+</ul>
+</div></td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="examples">
+<h3><a class="toc-backref" href="#id4" role="doc-backlink">Examples</a><a class="headerlink" href="#examples" title="Link to this heading"></a></h3>
+<div class="highlight-yaml+jinja notranslate"><div class="highlight"><pre><span></span><span class="c1"># Create user with autogen password</span>
+<span class="nt">linux_accounts_list</span><span class="p">:</span>
+<span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">ansible</span>
+<span class="w">    </span><span class="nt">comment</span><span class="p">:</span><span class="w"> </span><span class="s">&#39;Ansible</span><span class="nv"> </span><span class="s">remote</span><span class="nv"> </span><span class="s">user&#39;</span>
+<span class="w">    </span><span class="nt">state</span><span class="p">:</span><span class="w"> </span><span class="s">&#39;present&#39;</span>
+<span class="w">    </span><span class="nt">pass_type</span><span class="p">:</span><span class="w"> </span><span class="s">&#39;autogen&#39;</span>
+
+<span class="c1"># Create user with autogen password, add it to group and public ssh authorized keys</span>
+<span class="nt">linux_accounts_list</span><span class="p">:</span>
+<span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">ansible</span>
+<span class="w">    </span><span class="nt">comment</span><span class="p">:</span><span class="w"> </span><span class="s">&#39;Ansible</span><span class="nv"> </span><span class="s">remote</span><span class="nv"> </span><span class="s">user&#39;</span>
+<span class="w">    </span><span class="nt">state</span><span class="p">:</span><span class="w"> </span><span class="s">&#39;present&#39;</span>
+<span class="w">    </span><span class="nt">pass_type</span><span class="p">:</span><span class="w"> </span><span class="s">&#39;autogen&#39;</span>
+<span class="w">    </span><span class="nt">groups</span><span class="p">:</span>
+<span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">&lt;group1&gt;</span>
+<span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">&lt;group2&gt;</span>
+<span class="w">    </span><span class="nt">ssh_keys</span><span class="p">:</span>
+<span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">content</span><span class="p">:</span><span class="w"> </span><span class="s">&#39;&lt;public_ssh_key_content&gt;&#39;</span>
+<span class="w">        </span><span class="nt">state</span><span class="p">:</span><span class="w"> </span><span class="s">&#39;present&#39;</span>
+
+<span class="c1"># Create system user with password lock and add ssh authorized keys</span>
+<span class="nt">linux_accounts_list</span><span class="p">:</span>
+<span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">ansible</span>
+<span class="w">    </span><span class="nt">comment</span><span class="p">:</span><span class="w"> </span><span class="s">&#39;Ansible</span><span class="nv"> </span><span class="s">remote</span><span class="nv"> </span><span class="s">user&#39;</span>
+<span class="w">    </span><span class="nt">state</span><span class="p">:</span><span class="w"> </span><span class="s">&#39;present&#39;</span>
+<span class="w">    </span><span class="nt">system</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">true</span>
+<span class="w">    </span><span class="nt">pass_type</span><span class="p">:</span><span class="w"> </span><span class="s">&#39;locked&#39;</span>
+<span class="w">    </span><span class="nt">ssh_keys</span><span class="p">:</span>
+<span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">content</span><span class="p">:</span><span class="w"> </span><span class="s">&#39;&lt;public_ssh_key_content&gt;&#39;</span>
+<span class="w">        </span><span class="nt">state</span><span class="p">:</span><span class="w"> </span><span class="s">&#39;present&#39;</span>
+
+<span class="c1"># Remove user account (automaticaly delete home directory)</span>
+<span class="nt">linux_accounts_list</span><span class="p">:</span>
+<span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">ansible</span>
+<span class="w">    </span><span class="nt">state</span><span class="p">:</span><span class="w"> </span><span class="s">&#39;absent&#39;</span>
+</pre></div>
+</div>
+</section>
+<section id="authors">
+<h3><a class="toc-backref" href="#id5" role="doc-backlink">Authors</a><a class="headerlink" href="#authors" title="Link to this heading"></a></h3>
+<ul class="simple">
+<li><p>Vincent FRICOU</p></li>
+</ul>
+<section id="collection-links">
+<h4>Collection links<a class="headerlink" href="#collection-links" title="Link to this heading"></a></h4>
+<ul class="ansible-links">
+<li><span><a aria-role="button" class="ansible-link reference external" href="https://github.com/vfricou/vfricou.system/issues" rel="noopener external" target="_blank">Issue Tracker</a></span></li>
+<li><span><a aria-role="button" class="ansible-link reference external" href="https://github.com/vfricou/vfricou.system/" rel="noopener external" target="_blank">Repository (Sources)</a></span></li>
+</ul>
+</section>
+</section>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          
+
+<footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="firewalld_role.html" class="btn btn-neutral float-left" title="vfricou.system.firewalld role – Install and manage firewalld" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="shell_role.html" class="btn btn-neutral float-right" title="vfricou.system.shell role – Shell configuration" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright Vincent FRICOU.</p>
+  </div>
+
+  
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script><!-- extra footer elements for Ansible beyond RTD Sphinx Theme -->
+
+</body>
+</html>
